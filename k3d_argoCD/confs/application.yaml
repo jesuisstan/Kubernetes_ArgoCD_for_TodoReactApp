@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-todo-app
+spec:
+  project: development
+  source:
+    repoURL: https://github.com/jesuisstan/todo_app_manifest.git
+    targetRevision: HEAD
+    path: app_manifests
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
