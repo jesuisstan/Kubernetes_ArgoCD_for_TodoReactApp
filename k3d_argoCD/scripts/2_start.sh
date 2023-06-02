@@ -42,12 +42,8 @@ kubectl wait --for=condition=Ready pods --all -n argocd --timeout=42s
 echo -e "
 \e[33m\nARGO CD IS DEPLOYED!\nFOLLOW THE INSTRUCTION TO WORK WITH IT:\n
 1) to access ArgoCD web dashboard run cmd:\n
-\e[35mkubectl port-forward svc/argocd-server -n argocd 9999:443\e[33m
-
-and proceed to \e[34mhttp://localhost:9999\e[33m
+\e[35m./3_openArdoCD.sh\e[33m
 
 2) to access TodoReactApp run cmd:\n
-\e[35mkubectl port-forward svc/todo-app-service -n dev 3000:3000\e[33m
-
-and proceed to \e[34mhttp://localhost:3000\e[0m
+\e[35m./4_openTodoApp.sh\e[0m
 "
